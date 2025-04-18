@@ -31,7 +31,7 @@ def analize_data():
     num_linhas = len(json_str.splitlines())
 
     if num_linhas > 70:
-        json_str = '\n'.join(json_str.splitlines()[:50])
+        json_str = '\n'.join(json_str.splitlines()[:70])
 
         print(f"Enviando seguinte json ao prompt {json_str}")
 
