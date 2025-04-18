@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify, abort
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import google.generativeai as genai
-import httpx
 import os
 import json
 from dotenv import load_dotenv
@@ -94,4 +93,5 @@ def generate_data():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 8080))  # Railway define PORT via env
+    app.run(host='0.0.0.0', port=port)
